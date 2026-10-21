@@ -1,0 +1,11 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "hospital-next",
+  "compatibility_date": "2026-10-19",
+  // الموقع Static Export (next.config.mjs: output "export")، فالناتج في فولدر out
+  // ويُرفع كملفات ثابتة بدون Worker وبدون OpenNext.
+  "assets": {
+    "directory": "./out",
+    "not_found_handling": "404-page"
+  }
+}

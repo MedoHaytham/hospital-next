@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+/* ألوان وخطوط الموقع: غيّرها من هنا وتتغير في كل الصفحات
+   (bg-teal, text-ink, border-line, rounded-card ...) */
+@theme {
+  --color-ink: #10292e;
+  --color-teal: #0e5e5c;
+  --color-mint: #e3f1ef;
+  --color-line: #cfe0de;
+  --color-amber: #f0b13a;
+  --color-paper: #fafcfc;
+  --color-muted: #4b6468;
+  --color-danger: #b3261e;
+
+  --radius-card: 14px;
+
+  --font-sans: "IBM Plex Sans Arabic", Tahoma, Arial, sans-serif;
+
+  /* نفس نقطة التحويل القديمة (800px) بدل 768px */
+  --breakpoint-md: 801px;
+
+  --animate-draw: draw 2.4s ease-out 0.3s forwards;
+  @keyframes draw {
+    to {
+      stroke-dashoffset: 0;
+    }
+  }
+}
+
+@layer base {
+  :focus-visible {
+    outline: 3px solid var(--color-amber);
+    outline-offset: 3px;
+  }
+}
+
+/* حاوية المحتوى: عرض أقصى 1120px وهوامش جانبية */
+@utility wrap {
+  width: min(1120px, 100% - 2.5rem);
+  margin-inline: auto;
+}
+
+/* نفس هوامش wrap لكن كـ padding (للهيدر الملتصق بحواف الشاشة) */
+@utility gutter {
+  padding-inline: max(1.25rem, calc((100% - 1120px) / 2));
+}
